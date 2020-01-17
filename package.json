@@ -4,9 +4,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dll": "webpack --config config/webpack.dll.js",
-    "start": "webpack-dev-server --config config/webpack.config.js",
-    "build": "cross-env rm -rf ./love && webpack --config config/webpack.config.js"
+    "dll": "cross-env rm -rf public/dll && webpack --progress --config config/webpack.dll.config.js",
+    "start": "webpack-dev-server --progress --config config/webpack.config.js",
+    "build": "cross-env rm -rf ./love && webpack --progress --config config/webpack.config.js"
   },
   "keywords": [],
   "author": "chengyuming <diy_mnb@163.com> (http://106.75.126.203/)",
@@ -16,6 +16,7 @@
     "@babel/preset-env": "^7.8.3",
     "babel-loader": "^8.0.6",
     "css-loader": "^3.4.2",
+    "echarts": "^4.6.0",
     "element-ui": "^2.13.0",
     "file-loader": "^5.0.2",
     "html-webpack-plugin": "^3.2.0",

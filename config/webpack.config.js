@@ -2,6 +2,7 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const webpack = require('webpack')
 module.exports = function(env, argv) {
   return {
     entry: {
@@ -73,11 +74,15 @@ module.exports = function(env, argv) {
         template: path.resolve(__dirname, '../public/index.html'),
         // 输出文件
         filename: 'index.html',
-        title: '程禹铭',
+        title: 'DLL学习ing',
         inject: true,
         hash: true,
         showErrors: true,
       }),
+      // 动态链接库
+      // new webpack.DllReferencePlugin({
+      //   manifest: require('../public/dll/vender-manifest.json')
+      // })
     ],
   }
 }
